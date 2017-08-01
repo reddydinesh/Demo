@@ -1,0 +1,13 @@
+Build:
+  stage: build
+  script: 
+    - "call ./winbuild.bat"
+  artifacts:
+    name: 'iisstart.htm' 
+    paths:
+     - winsrc
+deploy to IIS:
+  stage: deploy
+  script:
+    - "call ./windeploy.bat"
+  when: manual

@@ -1,0 +1,12 @@
+Build: 
+  stage: build
+  script: 
+    - "powershell -file samplebuild.ps1" 
+  artifacts: 
+    name: test.txt
+    paths: 
+      - dinesh
+deploy: 
+  stage: deploy
+  script: 
+    - "dir >> test.txt"
